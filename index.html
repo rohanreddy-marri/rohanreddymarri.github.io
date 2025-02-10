@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .profile-container {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgb(165, 191, 200);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        img 
+        {
+            width: 180px;
+            height: 180px;
+            border-radius: 0%;
+            align-items: center;
+            object-fit:fill ;
+            margin-bottom: 15px;
+            display: block;
+        }
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        section {
+            padding: 40px;
+        }
+        .projects {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .project {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: left;
+        }
+        .contact {
+            background: #222;
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+    </header>
+    <section>
+        <h2>About Me</h2>
+        <img src="profile.jpg" alt="Profile Picture" >
+        <p>I am <b>Rohan Reddy Marri</b> a passionate Data Science Master's student  with a strong foundation   in Artificial Intelligence, Machine learning and Data Science. proficient Python, SQL,
+             HTML and CSS, with hands-on experience in statistical modeling and advanced problem-solving. Passionate about leveraging cutting-edge AI, machine learning and data science methodologies to solve complex challenges in technology, information systems and the digital landscape.</p>
+    </section>
+    <section>
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Facial Recognition based Attendance System</h3>
+                <p>Developed a facial Recognition attendance system as a team project.
+                     The system aimed to automate the attendance tracking process for a large organization.</p>
+            </div>
+            <div class="project">
+                <h3>The Detection And Identification Of Android Malware Using Python And DL.</h3>
+                <p>This project involves developing an enhanced deep learning neural network specifically designed for detecting and identifying Android malware. 
+                    It utilizes Python programming language and deep learning techniques to enhance the accuracy and efficiency of malware detection on Android devices.</p>
+            </div>
+            <div class="project">
+                <h3>APPLIANCES ENERGY  ANALYSIS </h3>
+                <p>Study estimates of  household energy consumption using environmental data. 
+                    The goal is to create a tool that helps in designing smarter energy systems that can adjust automatically based on predictions. So that we can save energy.</p>
+            </div>
+        </div>
+    </section>
+    <section class="contact">
+        <h2>Contact Me click below</h2>
+        <p>Email:rohanreddy1408@gmail.com</p>
+        <a href="https://github.com/rohanreddy-marri" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/rohanreddymarri/" target="_blank">LinkedIn</a>
+        <a href="https://www.instagram.com/rohan_reddy_20/?igsh=MTZxYTR3dWxpbTZ1cA%3D%3D#" target="_blank">Instagram</a>
+        
+    </section>
+</body>
+</html>
