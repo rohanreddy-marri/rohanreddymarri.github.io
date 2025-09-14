@@ -1,108 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
-        .profile-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background: rgb(165, 191, 200);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            max-width: 600px;
-            margin: auto;
-        }
-        .profile-container img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: fill;
-        }
-        header {
-            background-color: #222;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-        }
-        section {
-            padding: 40px;
-        }
-        .projects {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .project {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 250px;
-            text-align: left;
-        }
-        .contact {
-            background: #222;
-            color: white;
-            padding: 20px;
-        }
-        .contact a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohan Reddy Marri | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #1f1f2e;
+      color: #fff;
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      overflow-y: auto;
+      flex-direction: row;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #111;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: fixed;
+      height: 100vh;
+    }
+
+    .sidebar img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #555;
+    }
+
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .social-icons a {
+      margin: 0 8px;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #5ccfe6;
+    }
+
+    .nav {
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    .nav a {
+      display: block;
+      padding: 10px 15px;
+      color: #ccc;
+      text-decoration: none;
+      transition: 0.3s;
+      border-radius: 5px;
+    }
+
+    .nav a:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* Main content */
+    .main {
+      margin-left: 250px;
+      flex: 1;
+      padding: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    section img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #666;
+    }
+
+    section h1 {
+      font-size: 36px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    section h3 {
+      font-weight: 400;
+      color: #5ccfe6;
+      margin-top: 10px;
+      border-bottom: 2px solid #5ccfe6;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    p {
+      margin: 10px 0;
+      line-height: 1.6;
+      max-width: 800px;
+    }
+
+    /* Resume button */
+    .resume-btn {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 10px 20px;
+      background-color: #5ccfe6;
+      color: #111;
+      font-weight: 600;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .resume-btn:hover {
+      background-color: #4ab0c5;
+      color: #fff;
+    }
+
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-around;
+        position: relative;
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 30px 20px;
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>My Portfolio</h1>
-    </header>
-    <section>
-        <h2>About Me</h2>
-        <div class="profile-container">
-            <img src="profile.jpg" alt="Profile Picture">
-            <p>I am <b>Rohan Reddy Marri</b> a passionate Data Science Master's student with a strong foundation in Artificial Intelligence, Machine Learning, and Data Science. Proficient in Python, SQL, HTML, and CSS, with hands-on experience in statistical modeling and advanced problem-solving. Passionate about leveraging AI and machine learning to solve complex challenges.</p>
-        </div>
-    </section>
-    <section>
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project">
-                <h3>Empowering students with transparent & predictable healthcare costs</h3>
-                <p>Developed an Automated Data Pipeline using AWS tools and visualized through Power BI which empower students with transparent and predictable healthcare costs.</p>
-                </div>
-            <div class="project">
-                <h3>Facial Recognition Based Attendance System</h3>
-                <p>Developed a facial recognition attendance system to automate attendance tracking for a large organization.</p>
-            </div>
-            <div class="project">
-                <h3>Detection and Identification of Android Malware</h3>
-                <p>Developed an enhanced deep learning model for detecting and identifying Android malware using Python.</p>
-            </div>
-            <div class="project">
-                <h3>Appliances Energy Analysis</h3>
-                <p>Analyzed household energy consumption using environmental data to design smarter energy-saving systems.</p>
-            </div>
-        </div>
-    </section>
-    <section class="contact">
-        <h2>Contact Me</h2>
-        <p>Email: rohanreddy1408@gmail.com</p>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="profile.jpg" alt="Profile Photo">
+      <h2>Rohan Reddy Marri</h2>
+      <div class="social-icons">
         <a href="https://github.com/rohanreddy-marri" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/rohanreddymarri/" target="_blank">LinkedIn</a>
-        <a href="https://www.instagram.com/rohan_reddy_20" target="_blank">Instagram</a>
-    </section>
-</body>
+      </div>
+      <div class="nav">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
 
+    <!-- Main Content -->
+    <div class="main">
+      <!-- About Section -->
+      <section id="about">
+        <img src="profile.jpg" alt="Rohan Reddy Marri">
+        <h1>Hi there, I'm <strong>Rohan Reddy Marri</strong></h1>
+        <h3>Master’s in Data Science | AI & ML Enthusiast | Aspiring Data Scientist | Data Analytics</h3>
+        <p>
+          I’m a passionate and driven Data Science graduate student at the University of New Haven, Connecticut, with a strong academic foundation in Artificial Intelligence, Machine Learning, and Python programming. My journey began with a Bachelor's degree in Computer Science and Artificial Intelligence, where I developed a deep understanding of core AI concepts and hands-on experience with data analysis, model building, and algorithmic thinking.
+        </p>
+        <p>
+          Currently, I’m expanding my skills in data science, statistics, cloud computing, and real-world problem-solving through projects and coursework. I'm proficient in Python, SQL, and various ML frameworks, and I enjoy working on end-to-end data pipelines, predictive modeling, and insightful data visualizations.
+        </p>
+        <p>
+          As I continue to learn and grow, I’m actively seeking internship opportunities where I can contribute to meaningful projects, collaborate with experienced professionals, and gain practical experience in the data science field.
+        </p>
+        <p>
+          Let’s connect—I'm always open to networking, mentorship, and new opportunities in the world of AI and data!
+        </p>
+      </section>
+
+      <!-- Education Section -->
+      <section id="education">
+        <h1>Education</h1>
+        <p><b>Master's in Data Science - University of New Haven</b> [Aug 2024 - Jun 2026]</p>
+        <p><b>B.Sc. Computer Science and Artificial Intelligence - Loyola Academy</b> [Aug 2021 - Jun 2024]</p>
+        <p><b>Intermediate MPC - Bhavan's Sri Aurobindo Junior College</b> [Aug 2019 - Jun 2021]</p>
+        <p><b>10th Standard - Little Flower High School</b> [Jun 2019]</p>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects">
+        <h1>Projects</h1>
+        <h3>1. Facial Recognition Attendance System</h3>
+        <p>Developed a facial recognition attendance system as a team project. The system aimed to automate the attendance tracking process for a large organization.</p>
+
+        <h3>2. Empowering Students with Transparent & Predictable Healthcare Costs</h3>
+        <p>Developed an automated data pipeline using AWS tools and visualized through Power BI, empowering students with transparent and predictable healthcare costs.</p>
+
+        <h3>3. Detection and Identification of Android Malware Using Python and DL</h3>
+        <p>Designed a deep learning neural network specifically for detecting and identifying Android malware, improving accuracy and efficiency of malware detection.</p>
+
+        <h3>4. Appliances Energy Analysis</h3>
+        <p>Estimated household energy consumption using environmental data, aiming to design smarter energy systems that adjust automatically based on predictions to save energy.</p>
+      </section>
+
+      <!-- Resume Section -->
+      <section id="resume">
+        <h1>Resume</h1>
+        <iframe src="Rohan_Resume.pdf" width="100%" height="600px" style="border:none;"></iframe>
+        <br>
+        <a href="Rohan_Resume.pdf" class="resume-btn" target="_blank">📄 View Full Resume</a>
+        <a href="Rohan_Resume.pdf" class="resume-btn" download>⬇️ Download Resume</a>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <h1>Contact</h1>
+        <p>Email: <a href="mailto:rohanreddy1408@gmail.com" style="color:#5ccfe6;">rohanreddy1408@gmail.com</a></p>
+      </section>
+    </div>
+  </div>
+</body>
 </html>
